@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.github.com.theshadow.echo";
+option java_outer_classname = "EchoProto";
+
+package echo;
+
+// The greeting service definition.
+service Echoer {
+    // Sends a greeting
+    rpc Echo (EchoRequest) returns (EchoReply) {}
+    rpc Shutdown(ShutdownRequest) returns (ShutdownResponse) {}
+}
+
+// The request message containing the user's name.
+message EchoRequest {
+    string message = 1;
+}
+
+// The response message containing the greetings
+message EchoReply {
+    string message = 1;
+}
+
+message ShutdownRequest {}
+
+message ShutdownResponse {}
